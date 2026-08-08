@@ -13,7 +13,7 @@ def mydeploy():
     pred=st.button("Predict Flower Type")
     if pred:
         df=pd.DataFrame({"sepal length (cm)":[sepal_length],"sepal width (cm)":[sepal_width],"petal length (cm)":[petal_length],"petal width (cm)":[petal_width]})
-        x=model1.predict(df)
+        x=model1.predict(df)[0]
         if x==0:
             st.write("Iris Flower Type: Setosa")
         elif x==1:
